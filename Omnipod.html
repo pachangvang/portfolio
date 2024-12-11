@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="header image.avif">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Omnipod@pcv</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!--go back button at the top-->
+<section>
+    <div class="col-12 col-s-12">
+    <span class="pop"><a href="index.html" style="font-weight: normal;
+            font-size: 10pt;">← Go back home</a></span>
+</div>
+</section>
+
+<body>
+    <div class="highmark intro">
+        <div class="col-12 col-s-12">
+    <h2>Moisture Detection for Omnipod 5</h2>
+    <p style="padding: 5pt 0 0 0;"><strong>🎓 Graduate Course Project</strong></p>
+    <p style="padding: 0 0 15pt 0;"><em>Skills: Human Factors, Product Design, Formatives</em></p>
+    <table>
+        <tr>
+          <th>Timeline</th>
+          <th>Project</th>
+          <th>Team</th>
+          <th>Role</th>
+        </tr>
+        <tr>
+          <td>April 2024; Wearable Technology Practicum</td>
+          <td>Pt 1: Feasibility<br><a href="#part2" style=" font-weight: normal;
+            font-size: 10pt;">Pt 2: Prototype →</a></td>
+          <td>Milo Tacheny (Product Designer)</td>
+            <td><span class="pop">Human Factors Engineer</span></td>
+        </tr>
+      </table>
+</div>
+</div>
+
+<!--<div  class="col-12 col-s-12">
+    <table>
+        <tr>
+        <td class="image-c"><img src="./Omnipod Slides/slide1.png" class="project-image"></td>
+        <td class="text-c">Enhancing Safety
+            Impact Detection and Cannula Dislodgment Prevention Methods on the Omnipod 5
+            Automated Insulin Delivery System</td>
+        <tr>
+            <td><img src="./Omnipod Slides/slide2.png" class="project-image"></td>
+        <td>The Omnipod offers uninterrupted insulin delivery using a tubeless, waterproof* insulin
+            pump known as a Pod, eliminating the need for multiple daily injections. It's wearable,
+            discreet, and compact.</td></tr>
+        <tr>
+            <td><img src="./Omnipod Slides/slide3.png" class="project-image"></td>
+            <td>Omnipod tubeless systems aremade of two main components, the Pod and a smartphone-
+                like Controller.The Pod is a small device thatyou fill with insulin and weardirectly on your
+                
+                body.The Pod receives insulin deliveryinstructions from the Controller. It then delivers
+                insulin into your body through a small, flexible tube called a cannula. This helps the wearer
+                protect against lows and highs, creating a closed loop system.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide4.png" class="project-image"></td>
+            <td>Detecting dislodged cannulas is crucial as they disrupt insulin delivery, often due to
+                unintended impacts on the pod. Insulin accumulation behind the detached cannula makes
+                it challenging for users to distinguish between natural body changes and pod-related
+                issues, leading to fluctuating blood sugar levels. Our project aims to develop methods to
+                detect impacts on the Omnipod that could lead to cannula dislodgment and create
+                redundancy for insulin presence sensing in case of dislodgment.</td>
+        </tr>
+    
+        <tr>
+            <td><img src="./Omnipod Slides/slide5.png" class="project-image"></td>
+            <td>To address this, we first evaluated the current product landscape, focusing on
+                competitors like Medtronic MiniMed 770G and t:slim X2. None of these leading pumps
+                offer indicators for forceful impacts or dislodged cannulas, crucial issues affecting insulin
+                delivery. While warnings exist for technical malfunctions or low insulin levels, user-related
+                errors are overlooked, underscoring the need for further research.
+                We then applied Wearability Guidelines by Gemperle et al. to assess market products. Our
+                analysis highlighted the Omnipod's superiority, especially in containing pump equipment
+                compared to traditional designs, which require separate monitoring devices.</td>
+        </tr>
+        
+        <tr>
+            <td><img src="./Omnipod Slides/slide6.png" class="project-image"></td>
+            <td>However, feedback from the diabetic community regarding leaking issues with the
+                Omnipod is substantial and widespread. This is evident from numerous posts on platforms
+                like Reddit, where individuals express concerns about not being heard by manufacturers
+                and designers, particularly regarding leaking caused by cannula dislodgment.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide7.png" class="project-image"></td>
+            <td>In Omnipod's official blog discussing troubleshooting steps for high blood glucose levels,
+                there's a dismissive tone regarding the issue of leaking. While the blog acknowledges users'
+                desire for improved technology, it seems resigned to the existing limitations. This
+                response is noteworthy considering it comes from the same company responsible for
+                manufacturing the product.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide8.png" class="project-image"></td>
+            <td>To address these challenges of cannula dislodgement and ultimately improve the user
+                experience of the Omnipod, we focused on impact detection and moisture sensing of
+                insulin leaks. We plan to use the ADXL335 accelerometer (which we used in last week's lab)
+                to measure and monitor sudden movements of the entire pod. There are multiple
+                resources online such as videos, open access codes, and step-by-step instructions that we
+                will utilize to connect the accelerometer to the Arduino.
+                Second, we plan to create a simple, two-electrode circuit embedded into the adhesive of
+                the Omnipod bandage around the cannula insertion site to detect moisture. An LED can be
+                added to the circuit to alert and provide visual feedback to the wearer. This simple system
+                is inspired by DIY soil moisture sensors for plants that often use nails or other conductive
+                materials as electrodes with a gap to detect moisture. There are other options available
+                such as textile sensors that can be used but are often quite expensive.
+                All of this will be connected and integrated with an Arduino Nano and a small battery for
+                power.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide9.png" class="project-image"></td>
+            <td>Here's a quick sketch of what and how we plan to implement the two components of
+                impact detection and moisture sensing to the Omnipod. There will be a 3D printed case to
+                enclose the Arduino Nano and accelerometer, that sits on top of the pod.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide10.png" class="project-image"></td>
+            <td>This slide shows a high-level overview of the steps we plan to take to ensure we can build
+                and implement the system to the pod -- from 3D printing the enclosure to assembling the
+                electronics and calibrating the system.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide11.png" class="project-image"></td>
+            <td>Thinking ahead about testing the new system with the Omnipod, we identified three
+                performance parameters: 1. integration and attachment of the system design, 2. sensor
+                accuracy and response time, and 3. data interpretability and usability.
+                These 3 parameters revolve around wanting to understand if the new system can detect
+                impact and sense moisture within an acceptable range as well as provide feedback to
+                users through the usability of the data such that users can understand and interpret the
+                numbers they see. Since we are interested in how all of these sensors will be integrated
+                into the existing Omnipod design, we also want to evaluate how well the new system is
+                attached to the pod.
+                Other ways of measuring these parameters often include conducting focused usability
+                tests and human factors engineering principles such as risk analysis, use error rates, and
+                key performance indicators. Other ways outside of usability tests include calibrating an
+                algorithm to detect movements or deviations from baseline data and providing redundant
+                representations of signals to the users as feedback.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide12-reference.png" class="project-image"></td>
+            <td>End of Part 1</td>
+        </tr>
+        <!--End of Part 1
+        <tr>
+            <td><img src="./Omnipod Slides/slide1.png" class="project-image"></td>
+            <td>Start of Part 2</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide13.png" class="project-image"></td>
+            <td>We'll start with a walkthrough of our design evolution, detailing its journey through
+                ideation and refinement.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide14.png" class="project-image"></td>
+            <td>To recap, our focus is on detecting insulin leakage resulting from a
+                dislodged cannula on an Omnipod 5 insulin pump. Dislodgement can occur due to
+                accidental impacts, like bumping into doorframes. Users face challenges in discerning if
+                blood sugar fluctuations are due to a dislodged cannula or other factors. In the initial
+                phase of our project, we explored sketches for a moisture-detecting sensor to be placed
+                beneath the Omnipod, aiding users in detecting this issue sooner.
+                We first aimed to create a seemingly simple sensor which would be housed between layers
+                of protective yet absorbent fabric to detect moisture from the pump, but not from the
+                body such as sweat.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide15.png" class="project-image"></td>
+            <td>We began by designing a compact horseshoe-shaped circuit with two closely spaced wires
+                to detect moisture presence. Our aim was to differentiate between wet and dry
+                conditions. Initially, we used a multimeter to test electrical signals before integrating with
+                the Arduino and constructing the moisture sensor. Our first test involved using a
+                waterproof adhesive bandage material, which prevented moisture detection unless fully
+                soaked. Subsequently, we directly submerged two wires into a bowl of water to measure
+                the resistance of the moisture sensor. We observed low ohm numbers indicating lower
+                resistance with increased water presence. Despite efforts to adjust sensor resistance by
+                testing various resistors on the breadboard, we encountered challenges in discerning
+                significant differences in resistance between dry and wet conditions, raising concerns
+                about sensor functionality. Limited engineering knowledge posed additional challenges in
+                fully grasping the circuit design. Consequently, we opted to pivot and simplify the
+                moisture sensor design.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide16.png" class="project-image"></td>
+            <td>From our pivot, we decided to move into a more simplistic structure. We transitioned to a
+                smaller breadboard design that eliminates the need for the Arduino Nano entirely. This
+                enabled us to develop a size-friendly approach with straightforward user features
+                powered by a 9V battery on a mini breadboard. Initially, we crafted the breadboard sketch
+                in TinkerCAD, then......</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide17.png" class="project-image"></td>
+            <td>....iterated through various layouts on a mini breadboard. We carefully considered how to
+                integrate these components seamlessly to maintain the desired form factor, akin to the
+                appeal of the Omnipod, which features a streamlined design without bulky attachments
+                directly on the device.
+                Here you can see our first version of the design where we had planned to attach the
+                battery and board directly onto the omnipod, which was rather bulky.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide18.png" class="project-image"></td>
+            <td>Our approach also involved analyzing material choices for our water circuit. We needed a
+                material that would absorb enough moisture or liquid to complete the circuit, yet not so
+                much that human sweat would inadvertently trigger the circuit, leading to a false alarm.
+                We experimented with various cloths, bandages, and wools to find the optimal solution.
+                Additionally, for redundancy, we incorporated indicators that permanently change color
+                upon contact with water or other liquids. Manufacturers and repair services commonly
+                use these indicators to swiftly check for water damage on devices. We experimented with
+                placing a sticker inside the viewing window of the Omnipod and around the base where
+                the cannula is located on the adhesive bandage.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide19.png" class="project-image"></td>
+            <td>In response to the previous bulky design when attempting to attach the equipment
+                directly onto the Omnipod, we opted to design a compact case with a belt clip to
+                accommodate the equipment. This case will be connected to the Omnipod site via a small
+                wire. Here, you can see the SolidWorks CAD schematics for the case.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide20.png" class="project-image"></td>
+            <td>The case is engineered to contain the entire breadboard and 9V battery in a compact
+                form, while still enabling the indicator light to activate and be visible.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide21.png" class="project-image"></td>
+            <td>And here is our final prototype! Let's take a look at a full walkthrough of the device in
+                action.</td>
+        </tr>
+
+        <!--video of prototype
+        <tr>
+            <td><img src="./Omnipod Slides/slide22-video.png" class="project-image"></td>
+            <td>Walkthrough video of the working prototype!</td>
+        </tr>
+
+        <!--video of testing the prototype
+        <tr>
+            <td><img src="./Omnipod Slides/slide23-video.png" class="project-image"></td>
+            <td>Video of testing the prototype with a participant~</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide24.png" class="project-image"></td>
+            <td>Before we dived into prototyping, we considered ways to measure the usability of the new
+                system in conjunction with the existing pod design. We referred back to the 3 parameters
+                identified in the first part of the project: design component integration, data usability, and
+                accuracy. We conducted simulated use testing with users to measure the usability of the
+                new system design. We performed a very simple task-based usability test where users
+                were given a scenario and had to complete 3 simple tasks. We logged the time completion,
+                task difficulty, and any verbal or nonverbal feedback from testing. We do have more
+                details on the slide, but we won't go into details for the sake of time.
+                After completing the tasks, users will complete the System Usability Scale. When
+                measuring accuracy, we simply looked to see if the LED turned on or off accordingly when
+                there was moisture present or not.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide25.png" class="project-image"></td>
+            <td>Then we analyzed the data collected using the following guidelines. For the SUS score, we
+                followed the steps to calculate the scores for each question and then averaged the total
+                score per user. Then we total the average score for all users to give us our final SUS score.
+                For task completion, we used a difficulty Likert scale that I used in my usability class to get
+                a general understanding of the perceived difficulty of each task. We consolidated the
+                difficulty rating for each user along with the time completed to extract more information.
+                As for the accuracy of the sensor, as long as it lights up when there is moisture present, we
+                consider that to be working.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide26.png" class="project-image"></td>
+            <td>So due to the timeframe of this project, we tested our prototype on 3 users (2 non-
+                diabetics and 1 diabetic).
+                
+                The SUS total score is 80 out 100. Please note that this number is not a percentage but
+                gives a reference number in terms of usability of the system. An average of 68 is
+                recommended for good usability, and the higher the number, the better.
+                We synthesized the recorded times for each task to understand how efficient the new
+                system is, especially with the additional step of attaching the moisture sensor to the pod.
+                At a high level, you can see that each task took about 30 seconds or less, totaling about 69
+                seconds to complete 3 tasks.
+                This heat map results visually show us which task was difficult for users or which user
+                struggled more. The average score overall is about a 2, which means that users
+                experienced some difficulty with the task but were still able to successfully complete it
+                without too much difficulty. And since we tested with 2 nondiabetics, we considered how
+                nondiabetics performed in contrast to diabetic users, as they may not be familiar with how
+                automated insulin delivery devices work.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide27.png" class="project-image"></td>
+            <td>The qualitative data from the open-ended questions we asked at the end of the tasks
+                indicates that users see potential and value for this idea but would like to see the sensor
+                incorporated within the pod, which is what we expected and, ideally, would want this idea
+                to move in that direction.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide28.png" class="project-image"></td>
+            <td>From our results, we referred to past studies on what a good range to be in when
+                collecting data for the usability of the Omnipod. Past studies assessing the usability of the
+                Omnipod using the System Usability Scale showed a range greater than 68, when testing
+                with different populations and age ranges. There was one study that reported the lowest
+                SUS score of 58 when testing with novices but the general pattern is to expect a score
+                higher than 68. Our SUS score of 80 is well above average and within the range of
+                acceptable usability. If we test with more users, we can validate and confirm potential
+                higher ranges.
+                Second, past studies and medical device guidelines noted that an error-free rate of 80% is
+                the goal for usability tests, as well as a completion rate of 100%. A past study looking at
+                the usability of different insulin devices reported that the Omnipod had a 90% success
+                rate and took an average of 167 seconds to complete 5 tasks. Compared to this, we had a
+                100% completion rate with an average of 69 seconds to complete 3 tasks and a rating of 2
+                for difficulty.
+                And lastly, for the accuracy of the moisture sensor, we measure it's accuracy by seeing if it
+                lights up or not during usability testing, which it did for all 3 users.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide29.png" class="project-image"></td>
+            <td>Lastly, we learned a lot about how complex wearable technology is and had to pivot our
+                ideas when faced with challenges. The most important thing we learned is to focus on one
+                aspect of the wearable device first instead of trying to do everything.
+                The biggest challenge with this project is applying what we learned about conceptual
+                physics, specifically electrical circuits, to build a moisture sensor.
+                And something we would do differently if we had more time is to test with a larger sample
+                of users, improve the prototype so the moisture sensor can be integrated within the pod
+                as one unit, and lastly, be able to differentiate between insulin and sweat for moisture
+                detection.</td>
+        </tr>
+
+        <tr>
+            <td><img src="./Omnipod Slides/slide30-reference.png" class="project-image"></td>
+            <td>End of presentation~ thank you for listening!</td>
+        </tr>
+    </table>
+</div>-->
+
+    <div class="col-12 col-s-12">
+        <p style="padding: 0 20pt 20pt 10pt;">⭐Despite not having direct engineering experience, we learned a lot about designing and engineering for wearable technology systems! We <span class="pop">leveraged 
+            our expertise in product design and human factors to build a system within our skillsets</span> as well as challenging ourselves to apply basic engineering principles (i.e. electrical ciruits, form factors, usability testing) to create a functional prototype.⭐ </p>
+        <p style="padding: 0 20pt 30pt 10pt; font-size:16pt; line-height: 22pt;"><strong>❝How can we enhance the safety and experience of the Omnipod 5 automated insulin delivery system (AIDS) through <span class="pop"> impact detection and cannula dislodgement prevention methods</span>?❞</strong></p>
+        <hr><br>
+            <h3 class="project-headings" style="padding: 0 20pt 0 10pt;">Part 1: Feasibility</h3>
+    <img src="./Omnipod Slides/slide1.png" class="project-image">
+    <img src="./Omnipod Slides/slide2.png" class="project-image">
+    <img src="./Omnipod Slides/slide3.png" class="project-image">
+    <img src="./Omnipod Slides/slide4.png" class="project-image">
+    <img src="./Omnipod Slides/slide5.png" class="project-image">
+    <img src="./Omnipod Slides/slide6.png" class="project-image">
+    <img src="./Omnipod Slides/slide7.png" class="project-image">
+    <img src="./Omnipod Slides/slide8.png" class="project-image">
+    <img src="./Omnipod Slides/slide9.png" class="project-image">
+    <img src="./Omnipod Slides/slide10.png" class="project-image">
+    <img src="./Omnipod Slides/slide11.png" class="project-image">
+    <img src="./Omnipod Slides/slide12-reference.png" class="project-image">
+       <!--end of Pt1-->
+    <br><br><hr>
+    <h3 class="project-headings" style="padding: 30pt 20pt 0 10pt;" id="part2">Part 2: Prototype</h3>
+    <img src="./Omnipod Slides/slide1.png" class="project-image">
+    <img src="./Omnipod Slides/slide13.png" class="project-image">
+    <img src="./Omnipod Slides/slide14.png" class="project-image">
+    <img src="./Omnipod Slides/slide15.png" class="project-image">
+    <img src="./Omnipod Slides/slide16.png" class="project-image">
+    <img src="./Omnipod Slides/slide17.png" class="project-image">
+    <img src="./Omnipod Slides/slide18.png" class="project-image">
+    <img src="./Omnipod Slides/slide19.png" class="project-image">
+    <img src="./Omnipod Slides/slide20.png" class="project-image">
+    <img src="./Omnipod Slides/slide21.png" class="project-image">
+    <img src="./Omnipod Slides/slide22-video(1).png" class="project-image">
+    <video width="100%" controls>
+        <source src="./Omnipod Slides/Walkthrough.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    <img src="./Omnipod Slides/slide23-video(1).png" class="project-image">
+    <video width="100%" controls>
+        <source src="./Omnipod Slides/On Body.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    <img src="./Omnipod Slides/slide24.png" class="project-image">
+    <img src="./Omnipod Slides/slide25.png" class="project-image">
+    <img src="./Omnipod Slides/slide26.png" class="project-image">
+    <img src="./Omnipod Slides/slide27.png" class="project-image">
+    <img src="./Omnipod Slides/slide28.png" class="project-image">
+    <img src="./Omnipod Slides/slide29.png" class="project-image">
+    <img src="./Omnipod Slides/slide30-reference.png" class="project-image" style="padding-bottom: 30pt;">
+    <!--end of Pt2-->
+</div>
+
+
+<!--go back button at the top-->
+<section>
+    <div class="col-12 col-s-12">
+    <span class="pop"><a href="index.html" style="font-weight: normal;
+            font-size: 10pt;">← Go back home</a></span>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="col-12 col-s-12">
+    <p style="font-size: 10pt;">I do other things besides design, research and school →. I <span class="pop">dance</span> → and just started <span class="pop">Muay Thai 
+        kickboxing</span> → this summer. I sing and play guitar →. I dig k-pop, edm and r&b music →. 
+    I have the occasional urge to go for a hike, a run or lay in bed all day, <em>reading manga</em>.</p></div>
+</footer>
+
+</body>
+</html>
