@@ -37,6 +37,10 @@ header {
     padding: 5pt 0 5pt 0;
 }
 
+.travel-image {
+    width: 100%;
+}
+
 .hero {
     color: #3D3D3D;
     font-family: franklin-gothic-urw, sans-serif;
